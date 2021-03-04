@@ -1,11 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
+import {GlobalStyle} from "../styled/Reset.Styled";
+import Header from "./components/Header";
+import Routes from "./routes/router";
 
 const App = () => {
 
     return(
         <Container>
-            App
+            <GlobalStyle/>
+            <Header/>
+            <Routes/>
         </Container>
     )
 }
