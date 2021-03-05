@@ -1,11 +1,21 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import styled from 'styled-components';
+import CategoryList from "../Category/CategoryList";
+import {GamesActions} from "../../../redux/ActionCreators";
 
 const HomeContainer = () => {
 
+    useEffect(() => {
+        getGames();
+    },[])
+
+    const getGames = () => {
+        GamesActions.getTopGames();
+    }
+
     return (
         <Container>
-            HomeContainer
+            <CategoryList/>
         </Container>
     )
 }

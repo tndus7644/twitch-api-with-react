@@ -1,4 +1,5 @@
 import axios from 'axios';
+import {TWITCH_API_KEY, URL} from "../constants/consts";
 
 const FetchConsts = {
     GET: 'get',
@@ -12,8 +13,12 @@ const FetchConsts = {
 }
 
 const axiosInstance = axios.create({
-    // baseURL: URL.API_BASE_URL,
+    baseURL: URL.API_BASE_URL,
     timeout: 6000,
+    headers:{
+        'Client-ID':'drc4yegw602yggmdz7tqx1wnesdpx2',
+        'Authorization':'Bearer ophr8n3sjtosvkpgxsxxvrlwws38bg'
+    }
 });
 
 const request = async (contentType, method, url, data) => {
@@ -21,26 +26,22 @@ const request = async (contentType, method, url, data) => {
         const config = {
             url,
             method,
-            headers: {
-                'Content-Type': contentType,
-            }
         }
 
         if (method === FetchConsts.GET) {
             config.params = {
-                ...data,
-                client_id: {}
+                ...data
             }
 
         } else {
-            config.data = data;
+            config.data = data
         }
 
         console.log('@@[Request Config]', config);
 
         const result = await axiosInstance(config);
 
-        return result?.data;
+        return result?.data
 
     } catch (e) {
         if (e.response) {
@@ -55,8 +56,6 @@ const request = async (contentType, method, url, data) => {
 
     } finally {
     }
-
-
 }
 
 const FetchJson = {
