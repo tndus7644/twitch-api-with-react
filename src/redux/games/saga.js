@@ -7,10 +7,13 @@ const saga = function* () {
         takeLatest(Action.Types.GET_TOP_GAMES, function* ({data}) {
             try {
                 const result = yield call(API.getTopGames, data)
-                console.log("result", result)
-                yield put(Action.Creators.updateState({
-                    categoryList: result?.data
-                }))
+                console.log("[saga getTopGame]", result)
+                if(result){
+                    yield put(Action.Creators.updateState({
+                        categoryList: result
+                    }))
+                }
+
             } catch (e) {
                 console.log("e", e)
             }

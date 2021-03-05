@@ -16,7 +16,7 @@ const axiosInstance = axios.create({
     baseURL: URL.API_BASE_URL,
     timeout: 6000,
     headers:{
-        'Client-ID':'drc4yegw602yggmdz7tqx1wnesdpx2',
+        'Client-ID':TWITCH_API_KEY,
         'Authorization':'Bearer ophr8n3sjtosvkpgxsxxvrlwws38bg'
     }
 });

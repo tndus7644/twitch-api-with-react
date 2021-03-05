@@ -1,11 +1,11 @@
 import {combineReducers} from 'redux';
 
 import streamReducer from './streams/redux';
-import gameReducer from './games/redux';
+import gamesReducer from './games/redux';
 
 const reducers = combineReducers({
     stream:streamReducer,
-    game:gameReducer,
+    games:gamesReducer,
 });
 
 export default reducers;

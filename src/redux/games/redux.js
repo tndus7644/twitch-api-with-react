@@ -2,7 +2,9 @@ import {createActions, createReducer} from 'reduxsauce';
 
 const initialState = {
     categoryList:{
+        data:[
 
+        ]
     }
 }
 

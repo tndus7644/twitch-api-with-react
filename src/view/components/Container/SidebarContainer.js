@@ -8,9 +8,9 @@ const SidebarContainer = () => {
 
     const {LiveStreamsList} = useSelector(state => state.stream);
 
-    // useEffect(() => {
-    //     getLiveStreams();
-    // },[])
+    useEffect(() => {
+        getLiveStreams();
+    },[])
 
     const getLiveStreams = () => {
         StreamActions.getLiveStreams({
@@ -30,7 +30,7 @@ const Container = styled.div`
   top: 0;
   left: 0; 
   padding: 80px 10px 10px;
-  width: 230px;
+  width: 220px;
   height: 100vh;
   background: #eee;
   z-index: 100;
