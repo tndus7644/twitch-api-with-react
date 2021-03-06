@@ -11,15 +11,15 @@ const LiveChannelContent = (props) => {
         user_name
     } = props
 
-    const VideoThumb = thumbnail_url.replace('{width}', '316').replace('{height}', '178')
+    const VideoThumbSrc = thumbnail_url.replace('{width}', '316').replace('{height}', '178')
 
     return (
         <Container>
             <Video>
-                <img src={VideoThumb} alt=""/>
-                <h3>생방송</h3>
-                <p>시청자 {viewer_count}명</p>
-            </Video>
+            <img src={VideoThumbSrc} alt=""/>
+            <h3>생방송</h3>
+            <p>시청자 {viewer_count}명</p>
+        </Video>
             <VideoInfo>
                 <h1>{title}</h1>
                 <p>{user_name}</p>
@@ -32,7 +32,6 @@ const LiveChannelContent = (props) => {
 const Container = styled.div`
   cursor: pointer;
   max-width: 316px;
-
 `;
 
 const Video = styled.div`
@@ -58,6 +57,11 @@ const Video = styled.div`
     color: #fff;
     border-radius: 2px;
     font-size: 13px;
+  }
+  
+  img.slide{
+    width: 530px;
+    height: 330px;
   }
 `;
 

@@ -4,7 +4,7 @@ import CategoryList from "../Category/CategoryList";
 import {GamesActions, videosActions} from "../../../redux/ActionCreators";
 import {useSelector} from "react-redux";
 import LiveChannelList from "../LiveChannelList/LiveChannelList";
-import LiveVideoList from "../LiveVideoList/LiveVideoList";
+import VideoSlider from "../Slider";
 
 const HomeContainer = () => {
 
@@ -24,14 +24,15 @@ const HomeContainer = () => {
 
     const getLiveStreamsList = () => {
         videosActions.getLiveStreams({
-            first:5
+            first:5,
+            language:'ko'
         })
     }
 
 
     return (
         <Container>
-            <LiveVideoList/>
+            <VideoSlider LiveStreamsList={LiveStreamsList}/>
             <LiveChannelList LiveStreamsList={LiveStreamsList}/>
             <CategoryList categoryList={categoryList}/>
         </Container>

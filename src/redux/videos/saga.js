@@ -2,19 +2,32 @@ import {all, takeLatest, call, put} from 'redux-saga/effects';
 import {Action} from "./redux";
 import {API} from "../../api";
 
-const saga = function* (){
+const saga = function* () {
     yield all([
-        takeLatest(Action.Types.GET_LIVE_STREAMS, function* ({data}){
-            try{
+        takeLatest(Action.Types.GET_LIVE_STREAMS, function* ({data}) {
+            try {
                 const result = yield call(API.getLiveStreams, data)
                 console.log("[saga getLiveStreams]", result)
-                if(result){
+                if (result) {
                     yield put(Action.Creators.updateState({
                         LiveStreamsList: result
                     }))
                 }
-            }catch (e){
+            } catch (e) {
                 console.log("e", e)
+            }
+        }),
+        takeLatest(Action.Types.GET_LIVE_VIDEOS, function* ({data}) {
+            try {
+                const result = yield call(API.getLiveVideos, data)
+                console.log("[saga getLiveVideos]", result)
+                if (result) {
+                    yield put(Action.Creators.updateState({
+                        LiveVideoList: result
+                    }))
+                }
+            } catch (e) {
+
             }
         })
     ])

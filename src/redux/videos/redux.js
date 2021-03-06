@@ -1,12 +1,18 @@
 import {createActions, createReducer} from 'reduxsauce';
 
 const initialState = {
-    LiveStreamsList: {}
+    LiveStreamsList: {
+        data:[]
+    },
+    LiveVideoList:{
+        data:[]
+    }
 }
 
 export const Action = createActions({
     updateState: ['props'],
-    getLiveStreams: ['data']
+    getLiveStreams: ['data'],
+    getLiveVideos:['data']
 }, {
     prefix: 'STREAM/'
 });

@@ -1,6 +1,7 @@
 import {FetchJson} from "../lib/fetch";
 
 export const API = {
-    getLiveStreams: (data) => FetchJson.get('/helix/streams', data),
-    getTopGames: (data) => FetchJson.get('/helix/games/top', data),
+    getTopGames: (data) => FetchJson.get('/games/top', data),
+    getLiveStreams: (data) => FetchJson.get('/streams', data),
+    getLiveVideos: (data) => FetchJson.get('/videos', data),
 }
