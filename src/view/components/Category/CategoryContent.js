@@ -11,7 +11,6 @@ const CategoryContent = ({name, box_art_url}) => {
             <img src={gameThumb} alt=""/>
             <CategoryInfo>
                 <h1>{name}</h1>
-                <ColumnDotSvg/>
             </CategoryInfo>
         </Container>
     )
@@ -40,13 +39,7 @@ const Container = styled.div`
 `;
 
 const CategoryInfo = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   
-  svg{
-    width: 15px;
-  }
 `;
 
 export default CategoryContent;

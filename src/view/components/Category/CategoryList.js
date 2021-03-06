@@ -1,14 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import CategoryContent from "./CategoryContent";
+import {Title} from "../../../styled/Title.Styled";
 
 const CategoryList = ({categoryList}) => {
 
     return (
         <Container>
-            <Title>
-                취향저격 <span>카테고리</span>
-            </Title>
+            <CategoryTitle>
+                취향 저격 <span>카테고리</span>
+            </CategoryTitle>
             <GameCategory>
             {
                 categoryList.data.map((item, index) =>
@@ -22,11 +23,8 @@ const CategoryList = ({categoryList}) => {
 const Container = styled.div`
 `;
 
-const Title = styled.div`
-  font-weight: 600;
-  font-size: 18px;
-  padding-bottom: 15px;
-
+const CategoryTitle = styled(Title)`
+  
   span {
     color: #9047ff;
     cursor: pointer;
