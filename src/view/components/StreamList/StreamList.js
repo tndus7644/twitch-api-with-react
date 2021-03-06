@@ -1,11 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+import StreamContent from "./StreamContent";
 
-const Streamer = () => {
+const StreamList = () => {
 
     return(
         <Container>
-            Streamer
+            <StreamContent/>
         </Container>
     )
 }
@@ -14,4 +15,4 @@ const Container = styled.div`
 
 `;
 
-export default Streamer;
+export default StreamList;

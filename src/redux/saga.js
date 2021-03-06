@@ -1,12 +1,12 @@
 import {all, call} from 'redux-saga/effects'
 
-import streamSaga from './streams/saga'
 import gamesSaga from './games/saga'
+import videosSaga from './videos/saga'
 
 function* sagas() {
     yield all ([
-        call(streamSaga),
         call(gamesSaga),
+        call(videosSaga),
     ])
 }
 

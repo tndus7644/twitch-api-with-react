@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StreamerList = () => {
+const LiveVideoList = () => {
 
     return(
         <Container>
-            StreamerList
+            <iframe/>
         </Container>
     )
 }
@@ -14,4 +14,4 @@ const Container = styled.div`
 
 `;
 
-export default StreamerList;
+export default LiveVideoList;

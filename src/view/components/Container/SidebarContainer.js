@@ -1,26 +1,14 @@
-import React,{useEffect} from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import StreamerList from "../StreamerList";
-import {StreamActions} from "../../../redux/ActionCreators";
-import {useSelector} from "react-redux";
+import StreamList from "../StreamList/StreamList";
 
 const SidebarContainer = () => {
 
-    const {LiveStreamsList} = useSelector(state => state.stream);
-
-    useEffect(() => {
-        getLiveStreams();
-    },[])
-
-    const getLiveStreams = () => {
-        StreamActions.getLiveStreams({
-        })
-    }
 
     return(
         <Container>
             <h3>추천 채널</h3>
-            <StreamerList/>
+            <StreamList/>
         </Container>
     )
 }
@@ -37,6 +25,7 @@ const Container = styled.div`
   
   h3{
     font-size: 14px;
+    font-weight: 600;
   }
 `;
 

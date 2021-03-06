@@ -75,6 +75,7 @@ const Input = styled.input`
   &:focus {
     outline: 0;
     border: 2px solid #9047ff;
+    background: #fff;
   }
 `;
 
