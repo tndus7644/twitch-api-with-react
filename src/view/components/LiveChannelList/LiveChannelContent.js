@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import {useHistory} from "react-router";
 
 const LiveChannelContent = (props) => {
 
@@ -8,22 +9,32 @@ const LiveChannelContent = (props) => {
         title,
         viewer_count,
         game_name,
-        user_name
+        user_name,
+        user_id
     } = props
 
     const VideoThumbSrc = thumbnail_url.replace('{width}', '316').replace('{height}', '178')
 
+    const history = useHistory();
+
+    const navigate = (url) => {
+        history.push(url)
+    }
+
     return (
-        <Container>
+        <Container onClick={() => navigate(`/live/${user_id}`)}>
             <Video>
-            <img src={VideoThumbSrc} alt=""/>
-            <h3>생방송</h3>
-            <p>시청자 {viewer_count}명</p>
-        </Video>
+                <img src={VideoThumbSrc} alt=""/>
+                <h3>생방송</h3>
+                <p>시청자 {viewer_count}명</p>
+            </Video>
             <VideoInfo>
-                <h1>{title}</h1>
-                <p>{user_name}</p>
-                <p>{game_name}</p>
+                <Profile/>
+                <Info>
+                    <h1>{title}</h1>
+                    <p>{user_name}</p>
+                    <p>{game_name}</p>
+                </Info>
             </VideoInfo>
         </Container>
     )
@@ -58,8 +69,8 @@ const Video = styled.div`
     border-radius: 2px;
     font-size: 13px;
   }
-  
-  img.slide{
+
+  img.slide {
     width: 530px;
     height: 330px;
   }
@@ -67,7 +78,19 @@ const Video = styled.div`
 
 const VideoInfo = styled.div`
   padding-top: 15px;
+  display: flex;
+`;
 
+const Profile = styled.div`
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #9047ff;
+`;
+
+const Info = styled.div`
+  max-width: 250px;
+  padding-left: 10px;
   h1 {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -84,5 +107,6 @@ const VideoInfo = styled.div`
     line-height: 1.4;
   }
 `;
+
 
 export default LiveChannelContent;

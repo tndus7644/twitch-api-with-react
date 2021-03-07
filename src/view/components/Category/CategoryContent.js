@@ -29,6 +29,7 @@ const Container = styled.div`
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 1;
+    line-height: 1.4;
     -webkit-box-orient: vertical;
 
     &:hover {

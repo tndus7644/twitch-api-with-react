@@ -4,30 +4,30 @@ import {API} from "../../api";
 
 const saga = function* () {
     yield all([
-        takeLatest(Action.Types.GET_LIVE_STREAMS, function* ({data}) {
+        takeLatest(Action.Types.GET_LIVE_STREAMS_LIST, function* ({data}) {
             try {
                 const result = yield call(API.getLiveStreams, data)
                 console.log("[saga getLiveStreams]", result)
                 if (result) {
                     yield put(Action.Creators.updateState({
-                        LiveStreamsList: result
+                        LiveStreamsList: result,
                     }))
                 }
             } catch (e) {
                 console.log("e", e)
             }
         }),
-        takeLatest(Action.Types.GET_LIVE_VIDEOS, function* ({data}) {
+        takeLatest(Action.Types.GET_LIVE_STREAM_CHANNEL, function* ({data}) {
             try {
-                const result = yield call(API.getLiveVideos, data)
-                console.log("[saga getLiveVideos]", result)
+                const result = yield call(API.getStreamChannel, data)
+                console.log("[saga getStreamsChannel]", result)
                 if (result) {
                     yield put(Action.Creators.updateState({
-                        LiveVideoList: result
+                        LiveStreamChannel: result.data[0]
                     }))
                 }
             } catch (e) {
-
+                console.log("e", e)
             }
         })
     ])

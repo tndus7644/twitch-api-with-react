@@ -1,29 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
-import LiveVideoContent from "../LiveVideo/LiveVideoContent";
+import LiveVideoContent from "../SlideLiveVideo/LiveVideoContent";
 import {Swiper, SwiperSlide} from 'swiper/react';
 import SwiperCore, {
     Navigation,
-    Pagination,
-    Scrollbar,
 } from 'swiper';
 
 //style
 import 'swiper/swiper.scss';
 import "swiper/components/navigation/navigation.scss"; // *
-import "swiper/components/pagination/pagination.scss"; // *
-import "swiper/components/scrollbar/scrollbar.scss"; // *
 
-SwiperCore.use([Navigation, Pagination, Scrollbar]); // *
+SwiperCore.use([Navigation]); // *
 
-const VideoSlider = ({LiveStreamsList}) => {
+const LiveSlider = ({LiveStreamsList}) => {
 
     return (
         <Container>
             <Swiper
                 className='swiper-container'
                 spaceBetween={50}
-                slidesPerView={3}
+                slidesPerView={2}
                 navigation //*
                 pagination={{clickable: true}} //*
                 scrollbar={{draggable: true}} //*
@@ -32,8 +28,8 @@ const VideoSlider = ({LiveStreamsList}) => {
             >
                 {
                     LiveStreamsList.data.map((item, index) =>
-                        <SwiperSlide className={"swiper-slide"}>
-                            <LiveVideoContent key={index} {...item}/>
+                        <SwiperSlide key={index} className={"swiper-slide"}>
+                            <LiveVideoContent {...item}/>
                         </SwiperSlide>)
 
                 }
@@ -49,10 +45,13 @@ const Container = styled.div`
   .swiper-container {
     max-width: 1684px;
   }
-
-  .swiper-slide {
+  
+  .swiper-slide{
+    display: flex;
+    justify-content: center;
   }
+
 `;
 
 
-export default VideoSlider;
+export default LiveSlider;
