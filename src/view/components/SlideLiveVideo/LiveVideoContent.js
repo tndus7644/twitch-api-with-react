@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
 import LiveVideoInfo from "./LiveVideoInfo";
 import {useHistory} from "react-router";
@@ -19,7 +19,8 @@ const LiveVideoContent = (props) => {
         history.push(url)
     }
 
-    return(
+
+    return (
         <Container onClick={() => navigate(`/live/${user_id}`)}>
             <Video>
                 <iframe

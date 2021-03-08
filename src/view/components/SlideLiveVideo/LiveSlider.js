@@ -1,11 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import LiveVideoContent from "../SlideLiveVideo/LiveVideoContent";
+import LiveVideoContent from "./LiveVideoContent";
 import {Swiper, SwiperSlide} from 'swiper/react';
-import SwiperCore, {
-    Navigation,
-} from 'swiper';
-
+import SwiperCore, {Navigation,} from 'swiper';
 //style
 import 'swiper/swiper.scss';
 import "swiper/components/navigation/navigation.scss"; // *

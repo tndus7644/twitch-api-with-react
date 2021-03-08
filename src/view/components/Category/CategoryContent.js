@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import {ColumnDotSvg} from "../svg";
+import {CustomString} from "../../../styled/Title.Styled";
 
 const CategoryContent = ({name, box_art_url}) => {
 
@@ -10,7 +11,7 @@ const CategoryContent = ({name, box_art_url}) => {
         <Container>
             <img src={gameThumb} alt=""/>
             <CategoryInfo>
-                <h1>{name}</h1>
+                <Name>{name}</Name>
             </CategoryInfo>
         </Container>
     )
@@ -20,23 +21,16 @@ const Container = styled.div`
   cursor: pointer;
   max-width: 153px;
 
+`;
 
-  h1 {
-    padding-top: 10px;
-    font-weight: 600;
-    cursor: pointer;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    line-height: 1.4;
-    -webkit-box-orient: vertical;
+const Name = styled(CustomString)`
+  padding-top: 10px;
+  font-weight: 600;
+  cursor: pointer;
 
-    &:hover {
-      color: #9047ff;
-    }
+  &:hover {
+    color: #9047ff;
   }
-
 `;
 
 const CategoryInfo = styled.div`

@@ -5,3 +5,12 @@ export const Title = styled.div`
   font-size: 18px;
   padding-bottom: 15px;
 `;
+
+export const CustomString = styled.h1`
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-height: 1.4;
+  -webkit-box-orient: vertical;
+`;

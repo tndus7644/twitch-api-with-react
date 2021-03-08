@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import {useHistory} from "react-router";
+import {CustomString} from "../../../styled/Title.Styled";
 
 const LiveChannelContent = (props) => {
 
@@ -31,7 +32,7 @@ const LiveChannelContent = (props) => {
             <VideoInfo>
                 <Profile/>
                 <Info>
-                    <h1>{title}</h1>
+                    <Title>{title}</Title>
                     <p>{user_name}</p>
                     <p>{game_name}</p>
                 </Info>
@@ -91,21 +92,15 @@ const Profile = styled.div`
 const Info = styled.div`
   max-width: 250px;
   padding-left: 10px;
-  h1 {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    line-height: 1.5;
-    font-weight: 600;
-  }
 
   p {
     color: #666;
     font-size: 14px;
     line-height: 1.4;
   }
+`;
+
+const Title = styled(CustomString)`
 `;
 
 

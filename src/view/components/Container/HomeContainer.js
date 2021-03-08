@@ -4,7 +4,7 @@ import CategoryList from "../Category/CategoryList";
 import {GamesActions, videosActions} from "../../../redux/ActionCreators";
 import {useSelector} from "react-redux";
 import LiveChannelList from "../LiveChannelList/LiveChannelList";
-import LiveSlider from "../Slider/LiveSlider";
+import LiveSlider from "../SlideLiveVideo/LiveSlider";
 
 const HomeContainer = () => {
 
