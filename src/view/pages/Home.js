@@ -13,7 +13,6 @@ const Home = () => {
 }
 
 const Container = styled(ContentContainer)`
-  display: flex;
   
 `;
 

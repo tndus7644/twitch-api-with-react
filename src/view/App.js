@@ -20,7 +20,7 @@ const App = () => {
 }
 
 const Container = styled.div`
-  padding-top: 55px;
+    
 `;
 
 export default App;

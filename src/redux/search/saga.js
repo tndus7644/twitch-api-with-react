@@ -8,9 +8,33 @@ const saga = function* () {
             try {
                 const result = yield call(API.searchChannels, data)
                 console.log("[saga searchChannels]", result)
+                const channelsData = yield Promise.all(result.data.map(async item => {
+                    if(item.is_live){
+                        const streamData = await API.getLiveStreams({
+                            user_id: item.id
+                        })
+                        return{
+                            ...item,
+                            ...streamData.data[0]
+                        }
+                    }
+                    return item;
+                }))
+                let isLiveChannels = [];
+                let ifOffChannels = [];
+                channelsData.map((item) => {
+                    if(item.is_live){
+                        isLiveChannels.push(item)
+                    }else {
+                        ifOffChannels.push(item)
+                    }
+                })
                 if(result){
                     yield put(Action.Creators.updateState({
-                        channels: result,
+                        channels: {
+                            isLive : isLiveChannels,
+                            isOff: ifOffChannels
+                        }
                     }))
                 }
             } catch (e) {

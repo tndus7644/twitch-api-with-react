@@ -2,20 +2,24 @@ import React from 'react';
 import styled from 'styled-components';
 import LiveChannelContent from "./LiveChannelContent";
 import {Title} from "../../../styled/Title.Styled";
+import GridList from "../List/GridList";
+import FeedItem from "../Feed/FeedItem";
 
 const LiveChannelList = ({LiveStreamsList}) => {
+
+    const renderItem = (item) => <LiveChannelContent {...item}/>
 
     return (
         <Container>
             <VideoListTitle>
                 <h1>취향 저격 생방송 채널</h1>
             </VideoListTitle>
-            <VideoGroup>
-                {
-                    LiveStreamsList.data.map((item, index) =>
-                        <LiveChannelContent key={index} {...item}/>)
-                }
-            </VideoGroup>
+            <GridList data={LiveStreamsList.data}
+                      renderItem={renderItem}
+                      direction={'row'}
+            >
+
+            </GridList>
         </Container>
     )
 }

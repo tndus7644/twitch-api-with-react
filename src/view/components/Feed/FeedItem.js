@@ -11,10 +11,14 @@ const FeedItem = (props) => {
         viewer_count,
         game_name,
         user_name,
-        user_id
+        user_id,
+        shape
     } = props
 
-    const VideoThumbSrc = thumbnail_url.replace('{width}', '316').replace('{height}', '178')
+    console.log("shape", shape)
+
+
+    const ThumbSrc = thumbnail_url.replace('{width}', '316').replace('{height}', '178')
 
     const history = useHistory();
 
@@ -25,7 +29,7 @@ const FeedItem = (props) => {
     return (
         <Container onClick={() => navigate(`/live/${user_id}`)}>
             <Thumb>
-                <img src={VideoThumbSrc} alt=""/>
+                <img src={ThumbSrc} alt=""/>
                 <h3>생방송</h3>
                 <p>시청자 {viewer_count}명</p>
             </Thumb>
@@ -44,10 +48,29 @@ const FeedItem = (props) => {
 const Container = styled.div`
   cursor: pointer;
   max-width: 316px;
+  margin-bottom: 20px;
 `;
 
 const Thumb = styled.div`
   position: relative;
+
+  .offLive & {
+    img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    h3 {
+      display: none;
+    }
+
+    p {
+      display: none;
+    }
+  }
+
 
   h3 {
     position: absolute;

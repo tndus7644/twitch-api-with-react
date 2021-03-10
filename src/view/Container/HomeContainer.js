@@ -32,7 +32,7 @@ const HomeContainer = () => {
 
     return (
         <Container>
-            {/*<LiveSlider LiveStreamsList={LiveStreamsList}/>*/}
+            <LiveSlider LiveStreamsList={LiveStreamsList}/>
             <LiveChannelList LiveStreamsList={LiveStreamsList}/>
             <CategoryList categoryList={categoryList}/>
         </Container>

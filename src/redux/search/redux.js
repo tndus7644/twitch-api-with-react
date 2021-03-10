@@ -2,8 +2,8 @@ import {createActions, createReducer} from 'reduxsauce';
 
 const initialState = {
     channels:{
-        data:[],
-        pagination:{}
+        isLive:[],
+        isOff:[],
     },
     categories:{
         data:[],
