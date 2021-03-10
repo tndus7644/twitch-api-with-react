@@ -6,7 +6,7 @@ import {useHistory} from "react-router";
 
 const SearchBox = () => {
 
-    const [value, setValue] = useState();
+    const [value, setValue] = useState('');
 
     const history = useHistory();
 
@@ -20,7 +20,7 @@ const SearchBox = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        navigate(`/search/${value}`);
+        navigate(`/search?term=${value}`);
     }
 
     return (

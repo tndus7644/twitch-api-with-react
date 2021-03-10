@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {useHistory} from "react-router";
 import {CustomString} from "../../../styled/Title.Styled";
 
-const LiveChannelContent = (props) => {
+const FeedItem = (props) => {
 
     const {
         thumbnail_url,
@@ -24,11 +24,11 @@ const LiveChannelContent = (props) => {
 
     return (
         <Container onClick={() => navigate(`/live/${user_id}`)}>
-            <Video>
+            <Thumb>
                 <img src={VideoThumbSrc} alt=""/>
                 <h3>생방송</h3>
                 <p>시청자 {viewer_count}명</p>
-            </Video>
+            </Thumb>
             <VideoInfo>
                 <Profile/>
                 <Info>
@@ -46,7 +46,7 @@ const Container = styled.div`
   max-width: 316px;
 `;
 
-const Video = styled.div`
+const Thumb = styled.div`
   position: relative;
 
   h3 {
@@ -92,7 +92,6 @@ const Profile = styled.div`
 const Info = styled.div`
   max-width: 250px;
   padding-left: 10px;
-  flex: 1;
 
   p {
     color: #666;
@@ -105,4 +104,4 @@ const Title = styled(CustomString)`
 `;
 
 
-export default LiveChannelContent;
+export default FeedItem;

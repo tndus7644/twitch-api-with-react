@@ -1,21 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
-import SearchContainer from "../components/Container/SearchContainer";
+import SearchContainer from "../Container/SearchContainer";
 import {ContentContainer} from "../../styled/Container.Styled";
-import SidebarContainer from "../components/Container/SidebarContainer";
 
 const Search = () => {
 
     return(
         <Container>
-            <SidebarContainer/>
             <SearchContainer/>
         </Container>
     )
 }
 
-const Container = styled(ContentContainer)`
-
+const Container = styled(ContentContainer)` 
+  display: flex;
 `;
 
 export default Search;

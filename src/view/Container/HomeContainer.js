@@ -1,10 +1,10 @@
 import React,{useEffect} from 'react';
 import styled from 'styled-components';
-import CategoryList from "../Category/CategoryList";
-import {GamesActions, videosActions} from "../../../redux/ActionCreators";
+import CategoryList from "../components/Category/CategoryList";
+import {GamesActions, videosActions} from "../../redux/ActionCreators";
 import {useSelector} from "react-redux";
-import LiveChannelList from "../LiveChannelList/LiveChannelList";
-import LiveSlider from "../SlideLiveVideo/LiveSlider";
+import LiveChannelList from "../components/LiveChannelList/LiveChannelList";
+import LiveSlider from "../components/SlideLiveVideo/LiveSlider";
 
 const HomeContainer = () => {
 
@@ -32,7 +32,7 @@ const HomeContainer = () => {
 
     return (
         <Container>
-            <LiveSlider LiveStreamsList={LiveStreamsList}/>
+            {/*<LiveSlider LiveStreamsList={LiveStreamsList}/>*/}
             <LiveChannelList LiveStreamsList={LiveStreamsList}/>
             <CategoryList categoryList={categoryList}/>
         </Container>
@@ -42,7 +42,6 @@ const HomeContainer = () => {
 const Container = styled.div`
   padding-top: 80px;
   margin: 0 20px;
-  width: 100%;
 `;
 
 export default HomeContainer;

@@ -10,7 +10,7 @@ const Routes = () => {
     return(
         <Switch>
             <Route exact path={"/"} component={Home}/>
-            <Route exact path={"/search/:query"} component={Search}/>
+            <Route exact path={"/search"} component={Search}/>
             <Route exact path={"/live/:id"} component={Live}/>
         </Switch>
     )

@@ -1,10 +1,10 @@
 import React, {useEffect} from 'react';
 import styled from 'styled-components';
-import SidebarLiveList from "../Sidebar/SidebarLiveList";
-import {videosActions} from "../../../redux/ActionCreators";
+import SidebarLiveList from "../components/Sidebar/SidebarLiveList";
+import {videosActions} from "../../redux/ActionCreators";
 import {useSelector} from "react-redux";
-import SidebarInfo from "../Sidebar/SidebarInfo";
-import Footer from "../Footer";
+import SidebarInfo from "../components/Sidebar/SidebarInfo";
+import Footer from "../components/Footer";
 
 const SidebarContainer = () => {
 
@@ -21,7 +21,6 @@ const SidebarContainer = () => {
         })
     }
 
-
     return(
         <Container>
             <h3>추천 채널</h3>
@@ -34,10 +33,10 @@ const SidebarContainer = () => {
 
 const Container = styled.div`
   position: sticky;
-  top: 0;
+  top  : 0;
   left: 0; 
-  padding: 80px 10px 0;
-  width: 220px;
+  padding: 10px 10px 0;
+  width: 240px;
   height: 100vh;
   background: #eee;
   z-index: 100;

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import LiveContainer from "../components/Container/LiveContainer";
+import LiveContainer from "../Container/LiveContainer";
 
 const Live = ({match}) => {
 

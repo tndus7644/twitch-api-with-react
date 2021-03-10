@@ -1,14 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import HomeContainer from "../components/Container/HomeContainer";
+import HomeContainer from "../Container/HomeContainer";
 import {ContentContainer} from "../../styled/Container.Styled";
-import SidebarContainer from "../components/Container/SidebarContainer";
 
 const Home = () => {
 
     return (
         <Container>
-            <SidebarContainer/>
             <HomeContainer/>
         </Container>
     )
@@ -16,6 +14,7 @@ const Home = () => {
 
 const Container = styled(ContentContainer)`
   display: flex;
+  
 `;
 
 export default Home;

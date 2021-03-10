@@ -5,7 +5,7 @@ import {CustomString} from "../../../styled/Title.Styled";
 
 const CategoryContent = ({name, box_art_url}) => {
 
-    const gameThumb = box_art_url.replace('{width}', '153').replace('{height}', '204')
+    const gameThumb = box_art_url?.replace('{width}', '153').replace('{height}', '204')
 
     return (
         <Container>
