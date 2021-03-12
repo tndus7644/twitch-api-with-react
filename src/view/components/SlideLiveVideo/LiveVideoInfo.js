@@ -15,7 +15,7 @@ const LiveVideoInfo = (props) => {
 }
 
 const Container = styled.div`
-  width: 220px;
+  width: 200px;
   background: #fff;
   padding: 10px;
   font-size: 13px;

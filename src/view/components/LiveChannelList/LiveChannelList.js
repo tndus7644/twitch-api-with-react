@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import LiveChannelContent from "./LiveChannelContent";
 import {Title} from "../../../styled/Title.Styled";
 import GridList from "../List/GridList";
-import FeedItem from "../Feed/FeedItem";
 
 const LiveChannelList = ({LiveStreamsList}) => {
 
@@ -18,7 +17,6 @@ const LiveChannelList = ({LiveStreamsList}) => {
                       renderItem={renderItem}
                       direction={'row'}
             >
-
             </GridList>
         </Container>
     )
@@ -29,11 +27,6 @@ const Container = styled.div`
 `;
 
 const VideoListTitle = styled(Title)`
-`;
-
-const VideoGroup = styled.div`
-  display: flex;
-  justify-content: space-between;
 `;
 
 export default LiveChannelList;

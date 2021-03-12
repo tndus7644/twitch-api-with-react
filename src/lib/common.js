@@ -1,5 +1,4 @@
 import moment from 'moment';
-import {useEffect} from "react";
 
 const THOUSAND_COMMA_REGEX = /(\d)(?=(\d{3})+\b)/g;
 

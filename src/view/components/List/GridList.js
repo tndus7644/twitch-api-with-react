@@ -36,7 +36,7 @@ const Row = styled.div`
 
 const Col = styled.div`
   .row &{
-    width: 25%;
+    width: 20%;
     padding: 10px;
     
   }

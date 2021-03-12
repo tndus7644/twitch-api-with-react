@@ -1,9 +1,7 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import {GlobalStyle} from "../styled/Reset.Styled";
-import Header from "./components/Header";
 import Routes from "./routes/router";
-import SidebarContainer from "./Container/SidebarContainer";
 import Template from "./components/template";
 
 const App = () => {

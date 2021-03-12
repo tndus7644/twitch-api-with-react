@@ -12,18 +12,14 @@ const SearchContainer = () => {
     const location = useLocation();
     const params = qs.parse(location.search, {ignoreQueryPrefix: true})
 
-
     const {channels} = useSelector(state => state.search);
 
     useEffect(() => {
-        searchChannels();
-    }, [params?.term])
-
-    const searchChannels = () => {
         searchActions.searchChannels({
             query: params?.term,
         })
-    }
+    }, [params?.term])
+
 
     const renderItem = (item) => <FeedItem {...item}/>
 

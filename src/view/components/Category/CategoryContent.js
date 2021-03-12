@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import {ColumnDotSvg} from "../svg";
 import {CustomString} from "../../../styled/Title.Styled";
 
 const CategoryContent = ({name, box_art_url}) => {

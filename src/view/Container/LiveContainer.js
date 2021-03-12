@@ -1,7 +1,5 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import {videosActions} from "../../redux/ActionCreators";
-import {useSelector} from "react-redux";
 
 
 const LiveContainer = ({match}) => {

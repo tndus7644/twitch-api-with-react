@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import LiveVideoInfo from "./LiveVideoInfo";
 import {useHistory} from "react-router";
@@ -19,18 +19,18 @@ const LiveVideoContent = (props) => {
         history.push(url)
     }
 
-
     return (
         <Container onClick={() => navigate(`/live/${user_id}`)}>
-            <Video>
-                <iframe
-                    src={`https://player.twitch.tv/?channel=${user_login}&parent=localhost`}
-                    height="300"
-                    width="530"
-                    allowFullScreen={true}>
-                </iframe>
-            </Video>
-            <LiveVideoInfo viewer_count={viewer_count} user_name={user_name} game_name={game_name}/>
+                <Video>
+                    <iframe
+                        src={`https://player.twitch.tv/?channel=${user_login}&parent=localhost`}
+                        title={user_id}
+                        height="300"
+                        width="530"
+                        allowFullScreen={true}>
+                    </iframe>
+                </Video>
+                <LiveVideoInfo viewer_count={viewer_count} user_name={user_name} game_name={game_name}/>
         </Container>
     )
 }

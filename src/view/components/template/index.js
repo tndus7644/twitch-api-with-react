@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import {GlobalStyle} from "../../../styled/Reset.Styled";
 import Header from "../Header";
 import SidebarContainer from "../../Container/SidebarContainer";
 
