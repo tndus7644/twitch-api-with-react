@@ -2,9 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 
-const LiveContainer = ({match}) => {
+const LiveContainer = () => {
 
-    const id = match.params.id;
 
     return (
         <Container>
