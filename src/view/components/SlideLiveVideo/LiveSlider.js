@@ -16,7 +16,7 @@ const LiveSlider = ({LiveStreamsList}) => {
             <Swiper
                 className='swiper-container'
                 spaceBetween={50}
-                slidesPerView={2}
+                slidesPerView={1}
                 navigation //*
                 pagination={{clickable: true}} //*
                 scrollbar={{draggable: true}} //*
@@ -40,12 +40,13 @@ const Container = styled.div`
   margin-bottom: 30px;
 
   .swiper-container {
-    max-width: 1684px;
+    max-width: 700px;
+    height: 300px;
+    box-shadow: 0 1px 10px 6px rgba(0,0,0,0.04);
   }
   
   .swiper-slide{
     display: flex;
-    justify-content: center;
   }
 
 `;
