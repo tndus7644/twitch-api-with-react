@@ -8,6 +8,9 @@ const initialState = {
     categories:{
         data:[],
         pagination: {}
+    },
+    videosList:{
+        data:[]
     }
 }
 
@@ -17,6 +20,7 @@ export const Action = createActions({
     setChannels:['data'],
     searchCategories:['data'],
     setCategories:['data'],
+    searchVideos:['data']
 }, {
     prefix: 'CHANNELS/'
 });

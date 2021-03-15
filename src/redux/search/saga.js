@@ -1,4 +1,4 @@
-import {all, takeLatest, call, put} from 'redux-saga/effects';
+import {all, takeLatest, call, put, select} from 'redux-saga/effects';
 import {Action} from "./redux";
 import {API} from "../../api";
 
@@ -55,6 +55,19 @@ const saga = function* () {
                 console.log("e", e)
             }
         }),
+        takeLatest(Action.Types.SEARCH_VIDEOS, function* ({data}){
+            try{
+                const result = yield call(API.getSearchVideos, data)
+                console.log("[saga getSearchVideos]", result)
+                if(result){
+                    yield put(Action.Creators.updateState({
+                        videosList:result
+                    }))
+                }
+            }catch (e){
+                console.log("e", e)
+            }
+        })
     ])
 }
 

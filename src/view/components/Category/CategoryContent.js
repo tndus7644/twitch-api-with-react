@@ -19,6 +19,7 @@ const CategoryContent = ({name, box_art_url}) => {
 const Container = styled.div`
   cursor: pointer;
   max-width: 153px;
+  width: 10%;
 
 `;
 

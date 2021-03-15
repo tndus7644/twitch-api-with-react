@@ -7,4 +7,5 @@ export const API = {
     searchChannels: (data) => FetchJson.get('/search/channels', data),
     searchCategories: (data) => FetchJson.get('/search/categories', data),
     getUsers: (data) => FetchJson.get('/users', data),
+    getSearchVideos: (data) => FetchJson.get('/videos', data),
 }

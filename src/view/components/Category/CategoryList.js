@@ -21,6 +21,7 @@ const CategoryList = ({categoryList}) => {
 }
 
 const Container = styled.div`
+  margin-bottom: 30px;
 `;
 
 const CategoryTitle = styled(Title)`

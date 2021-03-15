@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import {ProfileImage} from "../../../styled/ProfileImage.Styled";
 
 const LiveVideoInfo = (props) => {
 
@@ -7,6 +8,7 @@ const LiveVideoInfo = (props) => {
 
     return (
         <Container>
+            <ProfileImage/>
             <h1>{user_name}</h1>
             <p className={"game_name"}>{game_name}</p>
             <p>시청자 {viewer_count}명</p>
@@ -20,6 +22,7 @@ const Container = styled.div`
   padding: 10px;
   font-size: 13px;
   line-height: 1.4;
+  
   
   h1{
     font-weight: 600;

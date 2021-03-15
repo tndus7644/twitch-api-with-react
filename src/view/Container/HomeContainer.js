@@ -5,15 +5,17 @@ import {GamesActions, videosActions} from "../../redux/ActionCreators";
 import {useSelector} from "react-redux";
 import LiveChannelList from "../components/LiveChannelList/LiveChannelList";
 import LiveSlider from "../components/SlideLiveVideo/LiveSlider";
+import StreamsCategory from "../components/StreamsCategory/StreamsCategory";
 
 const HomeContainer = () => {
 
     const {categoryList} = useSelector(state => state.games)
-    const {LiveStreamsList} = useSelector(state => state.videos);
+    const {LiveStreamsList, LiveCategoryStreams} = useSelector(state => state.videos);
 
     useEffect(() => {
         getGamesCategory();
         getLiveStreamsList();
+        getCategoryStreamsList();
     },[])
 
     const getGamesCategory = () => {
@@ -29,12 +31,21 @@ const HomeContainer = () => {
         })
     }
 
+    const getCategoryStreamsList = () => {
+        videosActions.getStreamsCategory({
+            first:5,
+            language:'ko',
+            game_id:'21779'
+        })
+    }
+
 
     return (
         <Container>
             <LiveSlider LiveStreamsList={LiveStreamsList}/>
             <LiveChannelList LiveStreamsList={LiveStreamsList}/>
             <CategoryList categoryList={categoryList}/>
+            <StreamsCategory LiveCategoryStreams={LiveCategoryStreams}/>
         </Container>
     )
 }

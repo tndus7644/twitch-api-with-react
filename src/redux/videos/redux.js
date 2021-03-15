@@ -6,13 +6,17 @@ const initialState = {
     },
     LiveStreamChannel: {
         data: []
+    },
+    LiveCategoryStreams:{
+        data:[]
     }
 }
 
 export const Action = createActions({
     updateState: ['props'],
     getLiveStreamsList: ['data'],
-    getLiveStreamChannel: ['data']
+    getLiveStreamChannel: ['data'],
+    getStreamsCategory:['data']
 }, {
     prefix: 'STREAM/'
 });

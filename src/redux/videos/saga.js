@@ -1,4 +1,4 @@
-import {all, takeLatest, call, put} from 'redux-saga/effects';
+import {all, takeLatest, call, put, select} from 'redux-saga/effects';
 import {Action} from "./redux";
 import {API} from "../../api";
 
@@ -27,6 +27,19 @@ const saga = function* () {
                     }))
                 }
             } catch (e) {
+                console.log("e", e)
+            }
+        }),
+        takeLatest(Action.Types.GET_STREAMS_CATEGORY, function* ({data}){
+            try{
+                const result = yield call(API.getLiveStreams, data)
+                console.log("[saga getLiveStreamsCategory", result)
+                if(result){
+                    yield put(Action.Creators.updateState({
+                        LiveCategoryStreams: result
+                    }))
+                }
+            }catch (e){
                 console.log("e", e)
             }
         })

@@ -6,11 +6,11 @@ import {useHistory} from "react-router";
 const LiveVideoContent = (props) => {
 
     const {
+        thumbnail_url,
         viewer_count,
         user_name,
         game_name,
         user_id,
-        user_login
     } = props
 
     const history = useHistory();
@@ -19,18 +19,15 @@ const LiveVideoContent = (props) => {
         history.push(url)
     }
 
+    const VideoThumbSrc = thumbnail_url.replace('{width}', '530').replace('{height}', '300')
+
     return (
         <Container onClick={() => navigate(`/live/${user_id}`)}>
-                <Video>
-                    <iframe
-                        src={`https://player.twitch.tv/?channel=${user_login}&parent=localhost`}
-                        title={user_id}
-                        height="300"
-                        width="530"
-                        allowFullScreen={true}>
-                    </iframe>
-                </Video>
-                <LiveVideoInfo viewer_count={viewer_count} user_name={user_name} game_name={game_name}/>
+            <Video>
+                <h3>생방송</h3>
+                <img src={VideoThumbSrc} alt=""/>
+            </Video>
+            <LiveVideoInfo viewer_count={viewer_count} user_name={user_name} game_name={game_name}/>
         </Container>
     )
 }
@@ -41,6 +38,23 @@ const Container = styled.div`
 
 const Video = styled.div`
   position: relative;
+  
+  h3{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #fff;
+    font-size: 14px;
+    background: #e91a17;
+    padding: 4px;
+    border-radius: 3px;
+  }
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 `;
 
 export default LiveVideoContent;

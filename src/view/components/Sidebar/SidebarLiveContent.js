@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import {thousandNumberFormat} from "../../../lib/common";
 import {CustomString} from "../../../styled/Title.Styled";
+import {ProfileImage} from "../../../styled/ProfileImage.Styled";
 
 const SidebarLiveContent = (props) => {
 
@@ -16,8 +17,11 @@ const SidebarLiveContent = (props) => {
     return (
         <Container>
             <Profile>
-                <UserName>{user_name} ({user_login})</UserName>
-                <p>{game_name}</p>
+                <ProfileImage/>
+                <div className={"Profile_info"}>
+                    <UserName>{user_name} ({user_login})</UserName>
+                    <p>{game_name}</p>
+                </div>
             </Profile>
             <Viewer>
                 <div className={"live"}/>
@@ -35,31 +39,40 @@ const Container = styled.div`
   font-size: 14px;
 `;
 
+const Profile = styled.div`
+  padding-left: 5px;
+  line-height: 1.2;
+  display: flex;
+  margin-right: 10px;
+  
+  div.Profile_info{
+    flex: 1;
+    margin-left: 10px;
+  }
+
+  p {
+    color: #666;
+  }
+
+`;
+
 const UserName = styled(CustomString)`
   font-weight: 600;
   cursor: pointer;
 `;
 
-const Profile = styled.div`
-  padding-left: 5px;
-  line-height: 1.2;
-  
-  p{
-    color: #666;
-  }
-`;
-
 const Viewer = styled.div`
   display: flex;
   align-items: center;
-    .live{
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: red;
-    }
-  
-  .viewer_count{
+
+  .live {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: red;
+  }
+
+  .viewer_count {
     padding-left: 5px;
   }
 `;

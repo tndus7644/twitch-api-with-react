@@ -53,14 +53,16 @@ export const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
     text-decoration: none;
+    color: #222;
     ::-webkit-scrollbar{
       display: none; !important;
     }
   }
 
   a {
-    color: #333;
+    color: #222;
   }
+  
 
   img {
     vertical-align: top;

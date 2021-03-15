@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import {useHistory} from "react-router";
 import {CustomString} from "../../../styled/Title.Styled";
+import {ProfileImage} from "../../../styled/ProfileImage.Styled";
 
 const LiveChannelContent = (props) => {
 
@@ -30,7 +31,7 @@ const LiveChannelContent = (props) => {
                 <p>시청자 {viewer_count}명</p>
             </Video>
             <VideoInfo>
-                <Profile/>
+                <ProfileImage/>
                 <Info>
                     <Title>{title}</Title>
                     <p>{user_name}</p>
@@ -82,12 +83,6 @@ const VideoInfo = styled.div`
   display: flex;
 `;
 
-const Profile = styled.div`
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  background: #9047ff;
-`;
 
 const Info = styled.div`
   max-width: 250px;

@@ -4,6 +4,14 @@ export const Title = styled.div`
   font-weight: 600;
   font-size: 18px;
   padding-bottom: 15px;
+  span {
+    color: #9047ff;
+    cursor: pointer;
+    
+    &:hover{
+      text-decoration: underline;
+    }
+  }
 `;
 
 export const CustomString = styled.h1`

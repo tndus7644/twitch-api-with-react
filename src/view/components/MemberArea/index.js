@@ -40,7 +40,9 @@ const Button = styled(GlobalButton)`
   
   &.join{
     background: #9047ff;
-    color: #fff;
+    p{
+      color: #fff;
+    }
   }
 `;
 
