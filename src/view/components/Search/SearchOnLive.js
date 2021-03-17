@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import {useHistory} from "react-router";
-import {CustomString} from "../../../styled/Title.Styled";
 
 const SearchOnLive = (props) => {
 

@@ -43,15 +43,20 @@ const Profile = styled.div`
   padding-left: 5px;
   line-height: 1.2;
   display: flex;
-  margin-right: 10px;
-  
-  div.Profile_info{
+
+  div.Profile_info {
     flex: 1;
     margin-left: 10px;
-  }
 
-  p {
-    color: #666;
+    p {
+      color: #666;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      line-height: 1.4;
+      -webkit-box-orient: vertical;
+    }
   }
 
 `;

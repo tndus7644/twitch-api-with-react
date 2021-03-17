@@ -24,10 +24,8 @@ const Container = styled.div`
 
 `;
 
-
 const CategoryTitle = styled(Title)`
-  
-
+    
 `;
 
 export default StreamsCategory;
