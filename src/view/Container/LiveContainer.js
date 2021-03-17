@@ -2,15 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 import ReactTwitchEmbedVideo from "react-twitch-embed-video"
 
-const LiveContainer = () => {
+const LiveContainer = ({match}) => {
+
+    const channelId = match.params.id;
 
     return (
         <Container>
             <Video>
-                <ReactTwitchEmbedVideo channel={"sunbaking"}
+                <ReactTwitchEmbedVideo channel={channelId}
                                        className={"StreamVideo"}
                                        width={"1680px"}
-                                       height={"900px"}/>
+                                       height={"800px"}/>
             </Video>
         </Container>
     )

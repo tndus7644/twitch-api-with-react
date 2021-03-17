@@ -10,7 +10,7 @@ const SearchOnLive = (props) => {
         viewer_count,
         game_name,
         user_name,
-        user_id,
+        user_login
     } = props
 
     const ThumbSrc = thumbnail_url.replace('{width}', '316').replace('{height}', '178')
@@ -22,7 +22,7 @@ const SearchOnLive = (props) => {
     }
 
     return (
-        <Container onClick={() => navigate(`/live/${user_id}`)}>
+        <Container onClick={() => navigate(`/live/${user_login}`)}>
             <Thumb>
                 <img src={ThumbSrc} alt=""/>
                 <h3>생방송</h3>

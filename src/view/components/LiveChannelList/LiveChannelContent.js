@@ -12,7 +12,7 @@ const LiveChannelContent = (props) => {
         viewer_count,
         game_name,
         user_name,
-        user_id
+        user_login
     } = props
 
     const VideoThumbSrc = thumbnail_url.replace('{width}', '316').replace('{height}', '178')
@@ -24,7 +24,7 @@ const LiveChannelContent = (props) => {
     }
 
     return (
-        <Container onClick={() => navigate(`/live/${user_id}`)}>
+        <Container onClick={() => navigate(`/live/${user_login}`)}>
             <Video>
                 <img src={VideoThumbSrc} alt=""/>
                 <h3>생방송</h3>
