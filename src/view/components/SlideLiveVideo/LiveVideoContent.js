@@ -10,7 +10,6 @@ const LiveVideoContent = (props) => {
         viewer_count,
         user_name,
         game_name,
-        user_id,
         user_login
     } = props
 
