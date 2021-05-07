@@ -13,6 +13,9 @@ const SearchContainer = () => {
     const location = useLocation();
     const params = qs.parse(location.search, {ignoreQueryPrefix: true})
 
+    console.log("qs", qs)
+    console.log("location", location)
+
     const {channels} = useSelector(state => state.search);
 
     useEffect(() => {

@@ -2,7 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import SidebarLiveContent from "./SidebarLiveContent";
 
-const SidebarLiveList = ({LiveStreamsList}) => {
+const SidebarLiveList = (props) => {
+
+    const{
+        LiveStreamsList
+    } = props
 
     return(
         <Container>

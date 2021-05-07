@@ -42,7 +42,7 @@ const saga = function* () {
             }catch (e){
                 console.log("e", e)
             }
-        })
+        }),
     ])
 }
 

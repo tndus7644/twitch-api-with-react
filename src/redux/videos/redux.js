@@ -9,6 +9,9 @@ const initialState = {
     },
     LiveCategoryStreams:{
         data:[]
+    },
+    LiveUserList:{
+        data:[]
     }
 }
 
@@ -16,7 +19,8 @@ export const Action = createActions({
     updateState: ['props'],
     getLiveStreamsList: ['data'],
     getLiveStreamChannel: ['data'],
-    getStreamsCategory:['data']
+    getStreamsCategory:['data'],
+    getLiveStreamUser:['data']
 }, {
     prefix: 'STREAM/'
 });

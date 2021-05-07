@@ -21,6 +21,7 @@ const SidebarContainer = () => {
         })
     }
 
+
     return(
         <Container>
             <h3>추천 채널</h3>
